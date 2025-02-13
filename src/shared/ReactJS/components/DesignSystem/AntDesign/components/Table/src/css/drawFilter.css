@@ -1,0 +1,60 @@
+/* #region Column filter */
+.AntColumn__filterContainer {
+  min-width: 240px;
+}
+
+.AntColumn__filterContent {
+  border-bottom: 1px solid var(--yy-color-border);
+  padding: var(--yy-padding-sm) var(--yy-padding-xs);
+}
+
+.AntColumn__filterFooter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--yy-padding-xs);
+}
+
+/* #endregion */
+
+/* #region Drawer */
+.yy-drawer-right > .yy-drawer-content-wrapper:has(.AntFilterDrawer__container) {
+  border-left: none;
+  box-shadow: none;
+}
+
+@media (min-width: 400px) {
+  .yy-drawer-right
+    > .yy-drawer-content-wrapper:has(.AntFilterDrawer__container) {
+    border-left: var(--yy-line-width) var(--yy-line-type) var(--yy-color-split);
+  }
+}
+
+.AntFilterDrawer__container .yy-drawer-header,
+.AntFilterDrawer__container .yy-drawer-body {
+  padding: var(--yy-padding-xs) var(--yy-drawer-footer-padding-inline);
+}
+.AntFilterDrawer__titleContainer {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.AntFilterDrawer__title {
+  font-weight: 500;
+}
+.AntFilterDrawer__closeButton {
+  font-size: 16px;
+}
+.AntFilterDrawer__fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.AntFilterDrawer__fieldLabel {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  scroll-margin-top: 100px;
+}

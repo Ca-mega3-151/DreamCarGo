@@ -1,0 +1,12 @@
+.AntSingleTimePicker__container {
+  width: 100%;
+}
+
+.AntSingleTimePicker__popup
+  .yy-picker-time-panel:has(.yy-picker-content:empty) {
+  display: none;
+}
+
+.AntSingleTimePicker__readOnly {
+  pointer-events: none;
+}

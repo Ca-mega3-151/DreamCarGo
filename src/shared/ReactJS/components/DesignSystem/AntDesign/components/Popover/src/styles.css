@@ -1,0 +1,21 @@
+.AntPopover__overlay.yy-popover
+  .yy-popover-inner[style*="background"]
+  .yy-popover-inner-content {
+  color: #ffffff;
+}
+
+.AntPopover__overlay.yy-popover-blue .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-purple .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-cyan .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-green .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-magenta .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-pink .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-red .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-orange .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-yellow .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-volcano .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-geekblue .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-lime .yy-popover-inner-content,
+.AntPopover__overlay.yy-popover-gold .yy-popover-inner-content {
+  color: #ffffff;
+}

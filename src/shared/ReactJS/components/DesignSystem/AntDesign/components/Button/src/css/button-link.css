@@ -1,0 +1,92 @@
+/* Color for type link */
+.AntButton__container.AntButton--link.yy-btn-link {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.AntButton__container.AntButton--link.yy-btn-link:not(:disabled):not(
+    .yy-btn-disabled
+  ):hover
+  span {
+  text-decoration: underline;
+}
+
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--primary:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-primary);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--primary:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):hover {
+  color: var(--yy-color-primary-hover);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--primary:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):active {
+  color: var(--yy-color-primary-active);
+}
+
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--success:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-success);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--success:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):hover {
+  color: var(--yy-color-success-hover);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--success:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):active {
+  color: var(--yy-color-success-active);
+}
+
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--error:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-error);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--error:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):hover {
+  color: var(--yy-color-error-hover);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--error:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):active {
+  color: var(--yy-color-error-active);
+}
+
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--info:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-info);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--info:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):hover {
+  color: var(--yy-color-info-hover);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--info:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):active {
+  color: var(--yy-color-info-active);
+}
+
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--warning:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-warning);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--warning:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):hover {
+  color: var(--yy-color-warning-hover);
+}
+.AntButton__container.AntButton--link.yy-btn-link.AntButton--warning:not(
+    :disabled
+  ):not(.yy-btn-disabled):not(.yy-btn-background-ghost):active {
+  color: var(--yy-color-warning-active);
+}

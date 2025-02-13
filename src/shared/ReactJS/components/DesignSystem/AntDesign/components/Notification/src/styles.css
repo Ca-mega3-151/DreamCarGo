@@ -1,0 +1,33 @@
+.yy-notification-notice {
+  border-radius: var(--yy-border-radius-lg) !important;
+}
+.yy-notification-notice-message {
+  font-weight: 500;
+}
+
+.AntNotification--primary .yy-notification-notice-icon {
+  color: var(--yy-color-primary) !important;
+}
+/* Bold */
+.AntNotification--bold.yy-notification-notice-info {
+  background-color: var(--yy-color-info) !important;
+}
+.AntNotification--bold.yy-notification-notice-error {
+  background-color: var(--yy-color-error) !important;
+}
+.AntNotification--bold.yy-notification-notice-success {
+  background-color: var(--yy-color-success-active) !important;
+}
+.AntNotification--bold.yy-notification-notice-warning {
+  background-color: var(--yy-color-warning) !important;
+}
+.AntNotification--bold.AntNotification--primary {
+  background-color: var(--yy-color-primary) !important;
+}
+
+.AntNotification--bold .yy-notification-notice-icon,
+.AntNotification--bold .yy-notification-notice-message,
+.AntNotification--bold .yy-notification-notice-description,
+.AntNotification--bold .yy-notification-notice-close {
+  color: var(--yy-color-white) !important;
+}

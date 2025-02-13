@@ -1,0 +1,56 @@
+.AntAlert__container .yy-alert-message {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.AntAlert__container .yy-alert-icon {
+  font-size: 36px;
+  margin-right: 12px;
+  margin-top: 8px;
+}
+
+/* Bold */
+.AntAlert--bold .yy-alert-message,
+.AntAlert--bold .yy-alert-description {
+  color: var(--yy-color-white) !important;
+}
+.AntAlert--bold.yy-alert-info {
+  background: var(--yy-color-info);
+}
+.AntAlert--bold.yy-alert-info .yy-alert-icon {
+  color: var(--yy-color-info-bg);
+}
+.AntAlert--bold.yy-alert-success {
+  background: var(--yy-color-success-active);
+}
+.AntAlert--bold.yy-alert-success .yy-alert-icon {
+  color: var(--yy-color-success-bg);
+}
+.AntAlert--bold.yy-alert-error {
+  background: var(--yy-color-error);
+}
+.AntAlert--bold.yy-alert-error .yy-alert-icon {
+  color: var(--yy-color-error-bg);
+}
+.AntAlert--bold.yy-alert-warning {
+  background: var(--yy-color-warning);
+}
+.AntAlert--bold.yy-alert-warning .yy-alert-icon {
+  color: var(--yy-color-warning-bg);
+}
+.AntAlert--bold.AntAlert--primary {
+  background: var(--yy-color-primary);
+}
+.AntAlert--bold.AntAlert--primary .yy-alert-icon {
+  color: var(--yy-color-primary-bg);
+}
+
+/* Outline */
+
+.AntAlert--outline.AntAlert--primary {
+  background: var(--yy-color-primary-bg);
+  border-color: var(--yy-color-primary);
+}
+.AntAlert--outline.AntAlert--primary .yy-alert-icon {
+  color: var(--yy-color-primary);
+}

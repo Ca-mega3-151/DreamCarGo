@@ -1,0 +1,4 @@
+.AntButton__container.yy-btn-loading {
+  gap: 8px;
+  pointer-events: none;
+}

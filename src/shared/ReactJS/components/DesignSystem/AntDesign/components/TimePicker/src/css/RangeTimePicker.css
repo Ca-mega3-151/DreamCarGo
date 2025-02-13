@@ -1,0 +1,11 @@
+.AntRangeTimePicker__container {
+  width: 100%;
+}
+
+.AntRangeTimePicker__popup .yy-picker-time-panel:has(.yy-picker-content:empty) {
+  display: none;
+}
+
+.AntRangeTimePicker__readOnly {
+  pointer-events: none;
+}

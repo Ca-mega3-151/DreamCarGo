@@ -1,0 +1,13 @@
+.AntSelectSingleAsTreeLayout__container {
+  width: 100%;
+}
+
+.AntSelectSingleAsTreeLayout__loading {
+  padding-bottom: 16px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.AntSelectSingleAsTreeLayout__readOnly {
+  pointer-events: none;
+}

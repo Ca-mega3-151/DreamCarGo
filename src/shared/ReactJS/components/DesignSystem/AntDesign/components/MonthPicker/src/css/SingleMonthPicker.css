@@ -1,0 +1,12 @@
+.AntSingleMonthPicker__container {
+  width: 100%;
+}
+
+.AntSingleMonthPicker__popup
+  .yy-picker-time-panel:has(.yy-picker-content:empty) {
+  display: none;
+}
+
+.AntSingleMonthPicker__readOnly {
+  pointer-events: none;
+}

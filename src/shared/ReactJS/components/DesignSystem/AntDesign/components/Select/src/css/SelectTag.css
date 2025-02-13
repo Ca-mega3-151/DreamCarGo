@@ -1,0 +1,24 @@
+.AntSelectTag__container.yy-select {
+  width: 100%;
+}
+
+.AntSelectTag__readOnly {
+  pointer-events: none;
+}
+
+.AntSelectTag__footerContainer {
+  margin-left: calc(var(--yy-padding-xxs) * -1);
+  margin-right: calc(var(--yy-padding-xxs) * -1);
+}
+.AntSelectTag__footerDivider {
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: var(--yy-padding-xxs);
+}
+.AntSelectTag__footerContent {
+  padding-bottom: calc(var(--yy-padding-xs) - var(--yy-padding-xxs));
+  padding-left: var(--yy-padding-xs);
+  padding-right: var(--yy-padding-xs);
+  padding-top: var(--yy-padding-xs);
+}

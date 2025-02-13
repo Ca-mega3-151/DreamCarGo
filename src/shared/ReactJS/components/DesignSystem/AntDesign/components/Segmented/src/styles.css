@@ -1,0 +1,4 @@
+.AntSegmented__container.yy-segmented .yy-segmented-item,
+.AntSegmented__container.yy-segmented .yy-segmented-thumb {
+  border-radius: calc(var(--yy-border-radius) - 1px);
+}

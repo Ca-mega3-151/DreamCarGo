@@ -1,0 +1,11 @@
+.TableActions__container {
+  align-items: center;
+  background-color: var(--yy-color-white);
+  border: 1px solid rgb(212 212 212);
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}

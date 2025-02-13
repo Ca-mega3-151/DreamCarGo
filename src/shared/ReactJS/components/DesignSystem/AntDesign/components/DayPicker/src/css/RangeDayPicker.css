@@ -1,0 +1,11 @@
+.AntRangeDayPicker__container {
+  width: 100%;
+}
+
+.AntRangeDayPicker__popup .yy-picker-time-panel:has(.yy-picker-content:empty) {
+  display: none;
+}
+
+.AntRangeDayPicker__readOnly {
+  pointer-events: none;
+}

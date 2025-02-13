@@ -1,0 +1,30 @@
+.AntSelectSingle__container.yy-select {
+  width: 100%;
+}
+
+.AntSelectSingle__loading {
+  padding-bottom: 16px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.AntSelectSingle__readOnly {
+  pointer-events: none;
+}
+
+.AntSelectSingle__footerContainer {
+  margin-left: calc(var(--yy-padding-xxs) * -1);
+  margin-right: calc(var(--yy-padding-xxs) * -1);
+}
+.AntSelectSingle__footerDivider {
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: var(--yy-padding-xxs);
+}
+.AntSelectSingle__footerContent {
+  padding-bottom: calc(var(--yy-padding-xs) - var(--yy-padding-xxs));
+  padding-left: var(--yy-padding-xs);
+  padding-right: var(--yy-padding-xs);
+  padding-top: var(--yy-padding-xs);
+}

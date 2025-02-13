@@ -1,0 +1,37 @@
+.ImplicitFixSSR__App,
+.ImplicitFixSSR__LoadingScreen {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes ImplicitFixSSR__fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ImplicitFixSSR__fadeInUp {
+  animation-name: ImplicitFixSSR__fadeInUp;
+}
+
+@keyframes ImplicitFixSSR__fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ImplicitFixSSR__fadeIn {
+  animation-name: ImplicitFixSSR__fadeIn;
+}

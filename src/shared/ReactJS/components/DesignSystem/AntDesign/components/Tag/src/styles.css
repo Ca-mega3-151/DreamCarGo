@@ -1,0 +1,5 @@
+.AntTag__container {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}

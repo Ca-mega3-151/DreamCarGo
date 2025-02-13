@@ -1,0 +1,12 @@
+.Empty__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+.Empty__description {
+  margin-top: 8px;
+}

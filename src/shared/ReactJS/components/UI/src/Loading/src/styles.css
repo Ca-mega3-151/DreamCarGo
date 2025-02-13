@@ -1,0 +1,19 @@
+.Loading__container {
+  animation: Loading__spin 1s linear infinite;
+  border-radius: 50%;
+  border-right: 3px solid transparent;
+  border-top: 3px solid currentColor;
+  box-sizing: border-box;
+  display: inline-block;
+  height: var(--Loading-size);
+  width: var(--Loading-size);
+}
+
+@keyframes Loading__spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,86 @@
+.AntNormalFilesList__container:empty {
+  display: none;
+}
+
+.AntNormalFilesList__container {
+  border: var(--yy-line-width) var(--yy-line-type) var(--yy-color-border);
+  border-radius: var(--yy-border-radius-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.AntNormalFilesList__item {
+  align-items: center;
+  border-bottom: var(--yy-line-width) var(--yy-line-type) var(--yy-color-border);
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 12px 8px;
+}
+
+.AntNormalFilesList__item:last-child {
+  border-bottom: none;
+}
+
+.AntNormalFilesList__info {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  /* Line progress width + Delete button + gap between info & delete button & progress */
+  max-width: calc(80% - 16px - 24px);
+}
+
+.AntNormalFilesList__infoIcon {
+  flex-basis: 16px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.AntNormalFilesList__fileInfo {
+  display: inline-flex;
+  flex-direction: column;
+  /* Icon + gap between icon & file name */
+  max-width: min(calc(100% - 16px - 12px), 300px);
+}
+.AntNormalFilesList__fileName {
+  color: var(--yy-color-text);
+  cursor: pointer;
+  font-weight: 500;
+  overflow: hidden;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  transition: 0.2s color;
+  white-space: nowrap;
+}
+.AntNormalFilesList__fileName:hover {
+  color: var(--yy-color-primary);
+}
+
+.AntNormalFilesList__capacity {
+  color: var(--yy-color-text-tertiary);
+  display: inline-block;
+  font-size: 10px;
+  text-decoration: none !important;
+}
+
+.AntNormalFilesList__progress {
+  align-items: center;
+  display: flex;
+  flex-basis: 20%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 20%;
+}
+
+.AntNormalFilesList__delete {
+  color: var(--yy-color-text-quaternary);
+  cursor: pointer;
+  flex-basis: 16px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  transition: 0.2s color;
+}
+.AntNormalFilesList__delete:hover {
+  color: var(--yy-color-error);
+}

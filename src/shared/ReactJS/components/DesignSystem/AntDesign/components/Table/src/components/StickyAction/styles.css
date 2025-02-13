@@ -1,0 +1,29 @@
+.AntTableStickyAction__container {
+  background-color: var(--yy-color-primary-active);
+  border-color: var(--yy-color-primary-active);
+  border-radius: var(--yy-border-radius);
+  bottom: 64px;
+  box-shadow:
+    0.3px 0.5px 0.7px hsl(0deg 0% 57% / 0.33),
+    0.7px 1.4px 1.8px -0.6px hsl(0deg 0% 57% / 0.33),
+    1.4px 2.7px 3.4px -1.2px hsl(0deg 0% 57% / 0.33),
+    2.8px 5.5px 6.9px -1.9px hsl(0deg 0% 57% / 0.33),
+    5.4px 10.8px 13.6px -2.5px hsl(0deg 0% 57% / 0.33);
+  color: var(--yy-color-text-light-solid);
+  left: 50%;
+  opacity: 0;
+  padding-block: 8px;
+  padding-inline: 12px;
+  pointer-events: none;
+  position: fixed;
+  transform: translate(-50%, 0);
+  transition: 0.2s all;
+  will-change: transform;
+  z-index: 10;
+}
+
+.AntTableStickyAction__visible {
+  opacity: 1;
+  pointer-events: initial;
+  transform: translate(-50%, -40px);
+}

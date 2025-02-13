@@ -1,0 +1,22 @@
+.AntLayout__sider {
+  border-right: 1px solid var(--yy-color-split);
+}
+
+.AntLayout__header {
+  background-color: var(--yy-layout-light-sider-bg);
+  border-bottom: 1px solid var(--yy-color-split);
+  padding-left: var(--yy-padding-lg);
+  padding-right: var(--yy-padding-lg);
+}
+
+.AntLayout__content {
+  padding: var(--yy-padding-xs);
+  padding-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  .AntLayout__content {
+    padding: var(--yy-padding);
+    padding-bottom: 0px;
+  }
+}

@@ -1,0 +1,50 @@
+.AntMenuHorizontal__container.yy-menu {
+  flex: 1 1 auto;
+}
+
+.AntMenuHorizontal__container.yy-menu {
+  border: none;
+}
+
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-item:hover,
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-submenu:hover
+  .yy-menu-submenu-title {
+  color: var(--yy-menu-horizontal-item-selected-color);
+}
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-item::after,
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-submenu::after {
+  display: none;
+}
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-item-selected::after,
+.AntMenuHorizontal__container.yy-menu-root.yy-menu-horizontal
+  .yy-menu-submenu-selected::after {
+  display: block;
+}
+
+/* Submenu */
+.AntMenuHorizontal__submenu.yy-menu .yy-menu.yy-menu-sub.yy-menu-vertical {
+  max-height: initial;
+}
+
+.AntMenuHorizontal__submenu.yy-menu .yy-menu-item.yy-menu-item-selected {
+  color: var(--yy-menu-item-color);
+}
+
+.AntMenuHorizontal__submenu.yy-menu .yy-menu-item.yy-menu-item-selected {
+  background-color: initial;
+}
+
+.AntMenuHorizontal__submenu.yy-menu .yy-menu-item.yy-menu-item-selected:hover,
+.AntMenuHorizontal__submenu.yy-menu.yy-menu-submenu-popup.yy-menu-submenu
+  .yy-menu-item:active {
+  background-color: var(--yy-menu-item-hover-bg);
+}
+
+.AntMenuHorizontal__container [hidden] {
+  display: none !important;
+}

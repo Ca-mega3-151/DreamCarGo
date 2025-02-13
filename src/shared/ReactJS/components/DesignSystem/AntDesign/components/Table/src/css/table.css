@@ -1,0 +1,82 @@
+/* #region Set every nodes has height full */
+.AntTable__container.yy-table-wrapper,
+.AntTable__container.yy-table-wrapper .yy-spin-nested-loading {
+  height: 100%;
+}
+
+.AntTable__container.yy-table-wrapper .yy-table-pagination {
+  background-color: var(--yy-color-bg-container);
+  border: var(--yy-line-width) var(--yy-line-type) var(--yy-table-border-color);
+  border-bottom-left-radius: var(--yy-table-header-border-radius);
+  border-bottom-right-radius: var(--yy-table-header-border-radius);
+  border-top: none;
+  margin: 0;
+  padding: var(--yy-padding-xs);
+}
+.AntTable__container.yy-table-wrapper .yy-pagination .yy-pagination-options {
+  display: block !important;
+}
+/* #endregion */
+
+/* #region Total text */
+.AntTable__container.yy-table-wrapper
+  .yy-table-pagination
+  .yy-pagination-total-text {
+  flex-basis: 100%;
+  height: initial;
+  margin: 0;
+  @media (min-width: 768px) {
+    flex: 1 1 0%;
+  }
+}
+.AntTable__container.yy-table-wrapper .yy-table-pagination {
+  justify-content: center;
+  text-align: center;
+  @media (min-width: 768px) {
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.AntTable__text-range--highlight {
+  background-color: transparent;
+  color: var(--yy-table-header-color);
+  color: var(--yy-color-text);
+  font-weight: var(--yy-font-weight-strong);
+  padding: 0px;
+}
+/* #endregion */
+
+/* #region Sticky pagination */
+.AntTable--paginationSticky.yy-table-wrapper .yy-spin-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.AntTable--paginationSticky.yy-table-wrapper .yy-table {
+  background-color: transparent;
+  flex: 1;
+  margin-bottom: 16px;
+  @media (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+}
+
+.AntTable--paginationSticky.yy-table-wrapper .yy-table-container {
+  background-color: var(--yy-color-bg-container);
+}
+
+.AntTable--paginationSticky.yy-table-wrapper .yy-table-pagination {
+  border: none;
+  border-radius: 0;
+  border-top: var(--yy-line-width) var(--yy-line-type)
+    var(--yy-table-border-color);
+  bottom: 0;
+  flex-shrink: 0;
+  padding: var(--yy-table-cell-padding-block)
+    var(--yy-table-cell-padding-inline);
+  position: sticky;
+  z-index: 10;
+}
+/* #endregion */

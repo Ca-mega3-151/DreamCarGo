@@ -1,0 +1,11 @@
+/* #region Record selected */
+.AntTable__container .AntCell__hasCheckbox {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.AntTable__container .AntCell__selected,
+.AntTable__container .AntCell__selected ~ .yy-table-cell {
+  background-color: var(--yy-color-primary-bg);
+}

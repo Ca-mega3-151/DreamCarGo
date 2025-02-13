@@ -1,0 +1,26 @@
+.AntImageFile__container {
+  align-items: center;
+  background-color: var(--yy-color-fill-alter);
+  border-radius: var(--yy-border-radius-lg);
+  display: inline-flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.AntImageFile__delete {
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.4);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 32px;
+}
