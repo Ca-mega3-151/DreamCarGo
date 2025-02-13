@@ -1,0 +1,110 @@
+.AntModal__container .yy-modal-content {
+  padding: 0;
+}
+
+.AntModal__container .yy-modal-header {
+  border-bottom: 1px solid var(--yy-color-border);
+  margin-bottom: 0;
+  padding-bottom: var(--yy-padding-sm);
+  padding-left: var(--yy-padding-sm);
+  padding-right: var(--yy-padding-sm);
+  padding-top: var(--yy-padding-sm);
+}
+.AntModal__container .yy-modal .yy-modal-close {
+  width: calc(var(--yy-control-height) * 0.75);
+  height: calc(var(--yy-control-height) * 0.75);
+}
+@media (min-width: 768px) {
+  .AntModal__container .yy-modal-header {
+    padding-bottom: var(--yy-padding);
+    padding-left: var(--yy-padding-md);
+    padding-right: var(--yy-padding-md);
+    padding-top: var(--yy-padding);
+  }
+  .AntModal__container .yy-modal .yy-modal-close {
+    top: calc(
+      (
+          calc(
+              calc(
+                  var(--yy-line-height-heading-5) *
+                    var(--yy-font-size-heading-5)
+                ) + calc(var(--yy-padding) * 2)
+            ) - var(--yy-control-height)
+        ) / 2
+    );
+    inset-inline-end: calc(
+      (
+          calc(
+              calc(
+                  var(--yy-line-height-heading-5) *
+                    var(--yy-font-size-heading-5)
+                ) + calc(var(--yy-padding) * 2)
+            ) - var(--yy-control-height)
+        ) / 2
+    );
+    width: var(--yy-control-height);
+    height: var(--yy-control-height);
+  }
+}
+
+.AntModal__container .yy-modal-footer {
+  border-top: 1px solid var(--yy-color-border);
+  margin-top: 0px;
+  padding-bottom: var(--yy-padding-sm);
+  padding-left: var(--yy-padding-sm);
+  padding-right: var(--yy-padding-sm);
+  padding-top: var(--yy-padding-sm);
+}
+@media (min-width: 768px) {
+  .AntModal__container .yy-modal-footer {
+    padding-bottom: var(--yy-padding);
+    padding-left: var(--yy-padding-md);
+    padding-right: var(--yy-padding-md);
+    padding-top: var(--yy-padding);
+  }
+}
+.AntModal__container .yy-modal-footer:empty {
+  display: none;
+}
+
+.AntModal__container .yy-modal-body {
+  padding-bottom: var(--yy-padding-sm);
+  padding-left: var(--yy-padding-sm);
+  padding-right: var(--yy-padding-sm);
+  padding-top: var(--yy-padding-sm);
+}
+.AntModal__container:not(:has(.yy-modal-header)) .yy-modal-body {
+  padding-top: calc(var(--yy-control-height) * 0.5);
+}
+@media (min-width: 768px) {
+  .AntModal__container .yy-modal-body {
+    padding-bottom: var(--yy-padding);
+    padding-left: var(--yy-padding-md);
+    padding-right: var(--yy-padding-md);
+    padding-top: var(--yy-padding);
+  }
+  .AntModal__container:not(:has(.yy-modal-header)) .yy-modal-body {
+    padding-top: calc(var(--yy-control-height) * 0.75);
+  }
+}
+
+.AntModal__footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AntModal__buttons {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.AntModal--footerSticky .yy-modal-footer {
+  background-color: inherit;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  bottom: 0px;
+  position: sticky;
+  z-index: 2;
+}

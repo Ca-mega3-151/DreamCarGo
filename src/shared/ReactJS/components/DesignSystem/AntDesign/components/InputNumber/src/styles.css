@@ -1,0 +1,7 @@
+.AntInputNumber__container {
+  width: 100%;
+}
+
+.AntInputNumber__readOnly {
+  pointer-events: none;
+}

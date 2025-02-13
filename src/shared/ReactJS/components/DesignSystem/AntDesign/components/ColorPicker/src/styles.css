@@ -1,0 +1,15 @@
+.AntColorPicker__container .yy-color-picker-trigger-text:empty {
+  display: none;
+}
+
+.AntColorPicker__container .yy-color-picker-clear::after {
+  width: 1000px;
+}
+.AntColorPicker__container.yy-color-picker-trigger-disabled
+  .yy-color-picker-clear {
+  cursor: not-allowed;
+}
+
+.AntColorPicker__readOnly {
+  pointer-events: none;
+}

@@ -1,0 +1,17 @@
+.AntTinyEditor__container .tox .tox-edit-area::before,
+.AntTinyEditor__container .tox-statusbar,
+.AntTinyEditor__container .tox-editor-header:has(.tox-toolbar__primary:empty) {
+  display: none !important;
+}
+
+.AntTinyEditor__container .tox.tox-tinymce {
+  border-radius: var(--yy-border-radius) !important;
+  transition: 0.2s border !important;
+}
+.AntTinyEditor__container .tox.tox-tinymce.tox-edit-focus {
+  border-color: var(--yy-color-primary) !important;
+}
+
+.AntTinyEditor__container.AntTinyEditor__renderOutput .tox.tox-tinymce {
+  border: none !important;
+}

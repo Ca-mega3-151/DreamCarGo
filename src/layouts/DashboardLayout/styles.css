@@ -1,0 +1,27 @@
+.Dashboard__sidebar .yy-layout-sider-children {
+  @apply flex flex-col !sticky left-0 top-0 !h-[100dvh] border border-solid border-y-transparent border-l-transparent border-r-neutral-200;
+}
+
+.Dashboard__sidebar .yy-layout-sider-children .yy-menu-root {
+  @apply flex-auto overflow-y-auto;
+}
+
+.Dashboard__content {
+  @apply !min-h-[100dvh];
+}
+
+.Dashboard__header {
+  @apply sticky left-0 top-0 z-10 border-solid border-transparent border-b-neutral-200 !bg-white !pl-2 !pr-2 shadow-sm;
+}
+
+.Dashboard__headerContent {
+  @apply flex h-full w-full items-center justify-between;
+}
+
+.Dashboard__headerRight {
+  @apply flex items-center justify-end w-full gap-4;
+}
+
+.Menu__DrawerContainer .yy-drawer-body {
+  @apply !p-2;
+}

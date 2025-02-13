@@ -1,0 +1,13 @@
+.AntSelectMultipleAsTreeLayout__container {
+  width: 100%;
+}
+
+.AntSelectMultipleAsTreeLayout__loading {
+  padding-bottom: 16px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.AntSelectMultipleAsTreeLayout__readOnly {
+  pointer-events: none;
+}

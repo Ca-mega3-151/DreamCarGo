@@ -1,0 +1,40 @@
+.ModalDelete__container {
+  display: flex;
+  gap: 12px;
+}
+
+.ModalDelete__title {
+  color: var(--yy-modal-title-color);
+  font-size: var(--yy-modal-title-font-size);
+  font-weight: var(--yy-font-weight-strong);
+  margin-bottom: 4px;
+}
+
+.ModalDelete__description {
+  color: var(--yy-color-text-tertiary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ModalDelete__icon {
+  align-items: center;
+  color: var(--yy-color-error);
+  display: flex;
+  font-size: 24px;
+  height: 40px;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+}
+
+.ModalDelete__icon::before {
+  background-color: currentColor;
+  border-radius: 50%;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

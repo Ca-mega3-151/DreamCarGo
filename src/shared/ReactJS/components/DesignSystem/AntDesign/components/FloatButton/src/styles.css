@@ -1,0 +1,4 @@
+.AntFloatButton__container.yy-float-btn-group-square
+  .yy-float-btn-square:last-child {
+  border-radius: var(--yy-border-radius-lg);
+}

@@ -1,0 +1,11 @@
+.AntSingleDayPicker__container {
+  width: 100%;
+}
+
+.AntSingleDayPicker__popup .yy-picker-time-panel:has(.yy-picker-content:empty) {
+  display: none;
+}
+
+.AntSingleDayPicker__readOnly {
+  pointer-events: none;
+}

@@ -1,0 +1,90 @@
+/* Color for type text */
+.AntButton__container.yy-btn-text.AntButton--primary:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-primary);
+}
+.AntButton__container.yy-btn-text.AntButton--primary:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):hover {
+  background-color: var(--yy-color-primary-hover);
+  color: var(--yy-color-text-light-solid);
+}
+.AntButton__container.yy-btn-text.AntButton--primary:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):active {
+  background-color: var(--yy-color-primary-active);
+  color: var(--yy-color-text-light-solid);
+}
+
+.AntButton__container.yy-btn-text.AntButton--success:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-success);
+}
+.AntButton__container.yy-btn-text.AntButton--success:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):hover {
+  background-color: var(--yy-color-success-hover);
+  color: var(--yy-color-text-light-solid);
+}
+.AntButton__container.yy-btn-text.AntButton--success:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):active {
+  background-color: var(--yy-color-success-active);
+  color: var(--yy-color-text-light-solid);
+}
+
+.AntButton__container.yy-btn-text.AntButton--error:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-error);
+}
+.AntButton__container.yy-btn-text.AntButton--error:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):hover {
+  background-color: var(--yy-color-error-hover);
+  color: var(--yy-color-text-light-solid);
+}
+.AntButton__container.yy-btn-text.AntButton--error:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):active {
+  background-color: var(--yy-color-error-active);
+  color: var(--yy-color-text-light-solid);
+}
+
+.AntButton__container.yy-btn-text.AntButton--info:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-info);
+}
+.AntButton__container.yy-btn-text.AntButton--info:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):hover {
+  background-color: var(--yy-color-info-hover);
+  color: var(--yy-color-text-light-solid);
+}
+.AntButton__container.yy-btn-text.AntButton--info:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):active {
+  background-color: var(--yy-color-info-active);
+  color: var(--yy-color-text-light-solid);
+}
+
+.AntButton__container.yy-btn-text.AntButton--warning:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost) {
+  color: var(--yy-color-warning);
+}
+.AntButton__container.yy-btn-text.AntButton--warning:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):hover {
+  background-color: var(--yy-color-warning-hover);
+  color: var(--yy-color-text-light-solid);
+}
+.AntButton__container.yy-btn-text.AntButton--warning:not(:disabled):not(
+    .yy-btn-disabled
+  ):not(.yy-btn-background-ghost):active {
+  background-color: var(--yy-color-warning-active);
+  color: var(--yy-color-text-light-solid);
+}

@@ -1,0 +1,75 @@
+.AntNormalFile__container {
+  border: var(--yy-line-width) var(--yy-line-type) var(--yy-color-border);
+  border-radius: var(--yy-border-radius-lg);
+  display: flex;
+  gap: 12px;
+  padding: var(--yy-padding-sm);
+  position: relative;
+}
+
+.AntNormalFile__information {
+  display: flex;
+  flex: 1;
+  gap: 8px;
+  /* Delete icon + delete position */
+  max-width: calc(100% - 32px - 16px);
+}
+
+.AntNormalFile__icon {
+  align-items: center;
+  background-color: #f4f5f6;
+  border-radius: 50%;
+  display: flex;
+  flex-basis: 40px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.AntNormalFile__fileInformation {
+  display: inline-flex;
+  flex: 1;
+  flex-direction: column;
+  /*  Icon + gap between icon & file name */
+  max-width: calc(100% - 40px - 16px);
+}
+
+.AntNormalFile__fileName {
+  color: var(--yy-color-text);
+  cursor: pointer;
+  font-weight: 500;
+  max-width: min(100%, 300px);
+  overflow: hidden;
+  text-decoration: underline;
+  text-overflow: ellipsis;
+  transition: 0.2s color;
+  white-space: nowrap;
+}
+.AntNormalFile__fileName:hover {
+  color: var(--yy-color-primary);
+}
+
+.AntNormalFile__capacity {
+  color: var(--yy-color-text-tertiary);
+  display: inline-block;
+  font-size: 10px;
+  text-decoration: none !important;
+}
+
+.AntNormalFile__delete {
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.4);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 32px;
+}

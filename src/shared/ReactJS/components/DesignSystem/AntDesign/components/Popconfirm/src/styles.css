@@ -1,0 +1,23 @@
+.AntPopconfirm__overlay .yy-popconfirm-buttons {
+  display: none;
+}
+
+.AntPopconfirm__overlay .yy-popconfirm-message {
+  margin-bottom: 0px;
+}
+.AntPopconfirm__overlay .yy-popover-inner {
+  padding: 0px;
+}
+
+.AntPopup__body {
+  padding: var(--yy-popover-inner-padding);
+}
+
+.AntPopup__footer {
+  align-items: center;
+  border-top: 1px solid var(--yy-color-border);
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: var(--yy-popover-inner-padding);
+}

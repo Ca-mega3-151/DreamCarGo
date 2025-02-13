@@ -1,0 +1,16 @@
+.FixedProgressLoader__container {
+  height: 4px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000000;
+}
+
+.FixedProgressLoader__bar {
+  height: 100%;
+}
+
+.FixedProgressLoader__container--hidden {
+  visibility: hidden;
+}

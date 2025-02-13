@@ -1,0 +1,7 @@
+.AntCollapse__container:empty {
+  display: none;
+}
+
+.AntCollapse__container .yy-collapse-header {
+  align-items: center;
+}

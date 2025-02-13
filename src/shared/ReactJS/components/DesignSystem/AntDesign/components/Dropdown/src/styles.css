@@ -1,0 +1,11 @@
+.AntDropdown__divider {
+  margin: 0;
+}
+
+.AntDropdown__footer {
+  padding: var(--yy-padding-xxs);
+}
+
+.AntDropdown__overlay [hidden] {
+  display: none !important;
+}

@@ -1,0 +1,23 @@
+.AntDoughnutChart__container {
+  position: relative;
+}
+
+.AntDoughnutChart__tooltipPlaceholder {
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.AntDoughnutChart__cutout {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: calc(50% - 6px);
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(50% - 6px);
+}

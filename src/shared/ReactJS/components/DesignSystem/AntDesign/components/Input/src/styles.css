@@ -1,0 +1,9 @@
+.AntInput__container input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.AntInput__readOnly {
+  pointer-events: none;
+}

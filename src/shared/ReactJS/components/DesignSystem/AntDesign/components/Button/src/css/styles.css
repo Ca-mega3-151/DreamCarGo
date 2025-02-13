@@ -1,0 +1,9 @@
+.AntButton__container.yy-btn {
+  align-items: center;
+  gap: 6px;
+}
+
+.AntButton__container .yy-btn-icon {
+  align-items: center;
+  display: inline-flex;
+}

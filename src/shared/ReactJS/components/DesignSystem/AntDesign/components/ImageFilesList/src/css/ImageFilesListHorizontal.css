@@ -1,0 +1,48 @@
+.AntImageFilesListHorizontal__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.AntImageFilesListHorizontal__item {
+  border: var(--yy-line-width) var(--yy-line-type) var(--yy-color-border);
+  border-radius: var(--yy-border-radius-lg);
+  height: calc(var(--yy-control-height-lg) * 2.55);
+  padding: var(--yy-padding-xs);
+  width: calc(var(--yy-control-height-lg) * 2.55);
+}
+
+.AntImageFilesListHorizontal__item .AntImageFilesListHorizontal__image {
+  background-color: var(--yy-color-fill-alter);
+  border-radius: var(--yy-border-radius-sm);
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.AntImageFilesListHorizontal__item .AntImageFilesListHorizontal__image img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.AntImageFilesListHorizontal__actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.AntImageFilesListHorizontal__delete {
+  transition: 0.2s color;
+}
+.AntImageFilesListHorizontal__delete:hover {
+  color: var(--yy-color-error);
+}
+
+.AntImageFilesListHorizontal__download {
+  transition: 0.2s color;
+}
+.AntImageFilesListHorizontal__download:hover {
+  color: var(--yy-color-link);
+}

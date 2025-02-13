@@ -1,0 +1,8 @@
+.AntMentions__readOnly {
+  pointer-events: none;
+}
+
+.AntMentions__popup.yy-mentions-dropdown
+  .yy-mentions-dropdown-menu-item-disabled {
+  background-color: initial !important;
+}

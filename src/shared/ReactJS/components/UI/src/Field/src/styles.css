@@ -1,0 +1,59 @@
+.Field__container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  --color-error: rgb(255, 77, 79);
+}
+
+.Field__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  scroll-margin-top: 100px;
+}
+
+.Field__required-mark {
+  color: var(--color-error);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 4px;
+}
+
+.Field__error {
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.Field__help {
+  color: rgb(115, 115, 115);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.Field__withError .yy-checkbox-inner,
+.Field__withError .yy-tree-checkbox-inner,
+.Field__withError .yy-color-picker-trigger,
+.Field__withError .yy-picker,
+.Field__withError .yy-input-outlined,
+.Field__withError .yy-input-number,
+.Field__withError .yy-radio-inner,
+.Field__withError .yy-select-selector,
+.Field__withError .yy-upload-drag {
+  border-color: var(--color-error) !important;
+}
+.Field__withError .yy-rate-star svg {
+  color: var(--color-error) !important;
+}
+
+.Field__withError .yy-slider-track,
+.Field__withError .yy-switch {
+  background-color: var(--color-error) !important;
+}
+.Field__withError .yy-slider-handle::after {
+  box-shadow: 0 0 0 var(--yy-slider-handle-line-width-hover) var(--color-error) !important;
+}

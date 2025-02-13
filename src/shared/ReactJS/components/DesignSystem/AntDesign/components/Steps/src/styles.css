@@ -1,0 +1,6 @@
+.AntSteps__container.yy-steps
+  .yy-steps-item
+  > .yy-steps-item-container
+  > .yy-steps-item-tail:after {
+  height: 2px;
+}
