@@ -1,31 +1,28 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-export const useListing = (searchTerm: string = '', filter: any = {}) => {
+export const useListing = (searchTerm: string = '') => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   const [error, setError] = useState<any>(null);
 
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get('/api/listing', { params: { search: searchTerm } });
+      setData(Array.isArray(response.data) ? response.data : []);
+      setError(null);
+    } catch (err) {
+      setError(err);
+      setData([]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [searchTerm]);
+
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await axios.get('./listing', {
-          params: {
-            search: searchTerm,
-            ...filter,
-          },
-        });
-        setData(response.data);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchData();
-  }, [searchTerm, filter]);
+  }, [fetchData]);
 
-  return { isLoading, data, error };
+  return { isLoading, data, error, refresh: fetchData };
 };

@@ -1,24 +1,14 @@
-// import { useState } from 'react';
+import axios from 'axios';
 
-// export function useCreate() {
-//   const [values, setValues] = useState();
-//   const [submittedData, setSubmittedData] = useState([]);
+export const useCreate = (refresh: () => void) => {
+  const createTransaction = async (transaction: any) => {
+    try {
+      await axios.post('/api/listing', transaction);
+      refresh();
+    } catch (err) {
+      console.error('Lỗi khi tạo giao dịch:', err);
+    }
+  };
 
-//   const handleChange = e => {
-//     const { name, value } = e.target;
-//     setValues({ ...values, [name]: value });
-//   };
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     setSubmittedData([...submittedData, values]);
-//     setValues();
-//   };
-
-//   return {
-//     values,
-//     handleChange,
-//     handleSubmit,
-//     submittedData,
-//   };
-// }
+  return { createTransaction };
+};

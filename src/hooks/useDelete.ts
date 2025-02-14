@@ -1,25 +1,14 @@
-import { useState } from 'react';
+import axios from 'axios';
 
-export function useDelete() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<unknown>(null);
-
-  const deleteData = async (id: string) => {
-    setLoading(true);
-
+export const useDelete = (refresh: () => void) => {
+  const deleteTransaction = async (id: string) => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-        method: 'DELETE',
-      });
-      const result = await response.json();
-      setData(result);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
+      await axios.delete(`/api/listing/${id}`);
+      refresh();
+    } catch (err) {
+      console.error('Lỗi khi xóa :', err);
     }
   };
 
-  return { data, loading, error, deleteData };
-}
+  return { deleteTransaction };
+};
