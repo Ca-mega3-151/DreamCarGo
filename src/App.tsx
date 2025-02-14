@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { DashboardLayout } from './layouts/DashboardLayout/DashboardLayout';
 import { ArticleTable } from './packages/Article/ArticleTable';
-import { ArticleDetail } from './packages/Article/Detail/Detail';
+import { ArticleEdit } from './packages/Article/Edit/Edit';
 import { FormArticle } from './packages/Article/FormMutation/FormMutation';
 import { StatisticTransactionTable } from './packages/StatisticTransaction/StatisticTransactionTable';
 
@@ -21,21 +21,8 @@ const router = createBrowserRouter([
         element: <ArticleTable />,
       },
       {
-        path: '/article/detail',
-        element: (
-          <ArticleDetail
-            article={{
-              catalogue: 'Lập trình',
-              content: 'Hướng dẫn sử dụng React',
-              createdAt: '10/02/2025',
-              employeeAt: 'Nguyễn Văn A',
-              id: '1',
-              status: 'Đã xuất bản',
-              title: 'Hướng dẫn sử dụng React',
-              url: 'https://www.google.com',
-            }}
-          />
-        ),
+        path: '/article/edit',
+        element: <ArticleEdit id="1" />,
       },
       {
         path: '/article/create',

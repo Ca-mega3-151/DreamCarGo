@@ -1,14 +1,10 @@
-import { Alert, Card, Table, Tag } from 'antd';
+import { Card, Table, Tag } from 'antd';
 import { useState } from 'react';
-
 import { StatisticTransactionFormListingHeader } from './StatisticTransactionHeader';
-import { useListing } from '~/hooks/useListing';
+import { useListingTable } from '~/hooks/useListing';
 
 export const StatisticTransactionTable = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const { isLoading, data, error } = useListing(searchTerm);
 
   const fakeData = [
     {
@@ -31,9 +27,26 @@ export const StatisticTransactionTable = () => {
       statusColor: 'orange',
       orderDate: '16/02/2025 11:15',
     },
+    {
+      id: 3,
+      orderCode: 'TT1003',
+      customer: 'Lê Văn C',
+      amount: '3,000 ¥',
+      paymentMethod: 'Bank Transfer',
+      status: 'Đã hủy',
+      statusColor: 'red',
+      orderDate: '17/02/2025 09:00',
+    },
   ];
-  const dataSource = data.length > 0 ? data : fakeData;
-  const filteredData = dataSource.filter(item => {
+
+  const { data, pagination, handleRequest } = useListingTable({
+    initialParams: { page: 1, pageSize: 5, search: '' },
+    apiFetchFunction: async () => {
+      return { items: fakeData, total: fakeData.length, totalsByStatus: {} };
+    },
+  });
+
+  const filteredData = data.filter(item => {
     return (
       item.orderCode.toLowerCase().includes(searchValue.toLowerCase()) ||
       item.customer.toLowerCase().includes(searchValue.toLowerCase())
@@ -60,15 +73,23 @@ export const StatisticTransactionTable = () => {
 
   return (
     <div>
-      <StatisticTransactionFormListingHeader setSearchTerm={setSearchTerm} setSearchValue={setSearchValue} />
-      {error && <Alert message="Lỗi tải dữ liệu!" type="error" showIcon />}
+      <StatisticTransactionFormListingHeader setSearchTerm={setSearchValue} setSearchValue={setSearchValue} />
 
       <Card style={{ backgroundColor: '#000', color: '#fff', fontWeight: 'bold' }}>
         <div style={{ fontSize: '18px' }}>
           Tổng số giao dịch phát sinh: <span style={{ fontSize: '20px' }}>{data.length}</span>
         </div>
       </Card>
-      <Table dataSource={filteredData} columns={columns} rowKey="id" pagination={{ pageSize: 5 }} loading={isLoading} />
+
+      <Table
+        dataSource={filteredData}
+        columns={columns}
+        rowKey="id"
+        pagination={{ pageSize: pagination.pageSize, current: pagination.page, total: pagination.totalRecords }}
+        onChange={pagination => {
+          return handleRequest({ page: pagination.current, pageSize: pagination.pageSize });
+        }}
+      />
     </div>
   );
 };

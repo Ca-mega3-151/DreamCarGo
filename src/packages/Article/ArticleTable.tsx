@@ -1,43 +1,62 @@
-import { DeleteOutlined, EditOutlined, EyeOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { Alert, Table, Tag } from 'antd';
 import { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 import { ArticleFormListingHeader } from './ArticleHeader';
-import { useListing } from '~/hooks/useListing';
+import { useDelete } from '~/hooks/useDelete';
+import { useListingTable } from '~/hooks/useListing';
 import { TableActions } from '~/shared/ReactJS';
+
+// Fake API function
+const deleteArticleAPI = async (id: string) => {
+  return new Promise(resolve => {
+    return setTimeout(() => {
+      return resolve(`Deleted article ${id}`);
+    }, 1000);
+  });
+};
 
 export const ArticleTable = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const { isLoading, data, error } = useListing(searchTerm);
-
-  const fakeData = [
-    {
-      id: '1',
-      title: 'Hướng dẫn sử dụng React',
-      catalogue: 'Lập trình',
-      status: 'Đã xuất bản',
-      statusColor: 'green',
-      createdAt: '10/02/2025',
-      employeeAt: 'Nguyễn Văn A',
+  const { data, pagination, handleRequest, isLoading, error } = useListingTable({
+    initialParams: { page: 1, pageSize: 5, search: '' },
+    apiFetchFunction: async () => {
+      return {
+        items: [
+          {
+            id: '1',
+            title: 'Hướng dẫn sử dụng React',
+            catalogue: 'Lập trình',
+            status: 'Đã xuất bản',
+            statusColor: 'green',
+            createdAt: '10/02/2025',
+            employeeAt: 'Nguyễn Văn A',
+          },
+          {
+            id: '2',
+            title: 'Giới thiệu về TypeScript',
+            catalogue: 'Lập trình',
+            status: 'Chờ duyệt',
+            statusColor: 'orange',
+            createdAt: '12/02/2025',
+            employeeAt: 'Trần Thị B',
+          },
+        ],
+        total: 2,
+      };
     },
-    {
-      id: '2',
-      title: 'Giới thiệu về TypeScript',
-      catalogue: 'Lập trình',
-      status: 'Chờ duyệt',
-      statusColor: 'orange',
-      createdAt: '12/02/2025',
-      employeeAt: 'Trần Thị B',
+  });
+
+  const { isDeleting, handleDelete } = useDelete({
+    apiDeleteFunction: deleteArticleAPI,
+    getRedirectUrl: () => {
+      return '/article';
     },
-  ];
+  });
 
-  const dataSource = data.length > 0 ? data : fakeData;
-
-  const filteredData = dataSource.filter(item => {
+  const filteredData = data.filter(item => {
     return (
       item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
       item.employeeAt.toLowerCase().includes(searchValue.toLowerCase())
@@ -64,15 +83,6 @@ export const ArticleTable = () => {
       width: 90,
       title: 'Hành động',
       render: (record: any) => {
-        const onEdit = (record: any) => {
-          console.log('Edit', record);
-        };
-        const onView = (record: any) => {
-          navigate(`/article/detail?id=${record.id}`);
-        };
-        const onDelete = (record: any) => {
-          console.log('Delete', record);
-        };
         return (
           <TableActions
             items={[
@@ -81,23 +91,15 @@ export const ArticleTable = () => {
                 label: 'Sửa',
                 icon: <EditOutlined className="!text-sm" />,
                 onClick: () => {
-                  return onEdit(record);
+                  navigate(`/article/edit`);
                 },
               },
               {
                 key: '2',
-                label: 'Xem',
-                icon: <EyeOutlined className="!text-sm" />,
-                onClick: () => {
-                  return onView(record);
-                },
-              },
-              {
-                key: '3',
                 label: 'Xóa',
                 icon: <DeleteOutlined className="!text-sm" />,
                 onClick: () => {
-                  return onDelete(record);
+                  return handleDelete(record.id);
                 },
               },
             ]}
@@ -110,16 +112,25 @@ export const ArticleTable = () => {
   return (
     <div>
       <ArticleFormListingHeader
+        setSearchTerm={setSearchValue}
         creatable
         createBtnText="Thêm mới"
-        setSearchTerm={setSearchTerm}
         setSearchValue={setSearchValue}
         onCreate={() => {
           return navigate('/article/create');
         }}
       />
       {error && <Alert message="Lỗi tải dữ liệu!" type="error" showIcon />}
-      <Table dataSource={filteredData} columns={columns} rowKey="id" pagination={{ pageSize: 5 }} loading={isLoading} />
+      <Table
+        dataSource={filteredData}
+        columns={columns}
+        rowKey="id"
+        pagination={{ pageSize: pagination.pageSize, current: pagination.page, total: pagination.totalRecords }}
+        loading={isLoading || isDeleting}
+        onChange={pagination => {
+          return handleRequest({ page: pagination.current, pageSize: pagination.pageSize });
+        }}
+      />
     </div>
   );
 };
