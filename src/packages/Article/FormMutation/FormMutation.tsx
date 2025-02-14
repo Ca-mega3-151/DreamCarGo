@@ -1,4 +1,4 @@
-import { Form, Input, Select, Button, Spin } from 'antd';
+import { Form, Input, Select, Spin } from 'antd';
 import { forwardRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { TypeOf } from 'zod';
@@ -25,7 +25,7 @@ export interface FormArticleProps {
 export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props => {
   const { uid, defaultValues } = props;
 
-  const { formValues, isLoading, isSubmitting, handleChange, handleSave, navigate } = useCreate<FormArticleValues>({
+  const { formValues, isLoading, handleChange, handleSave } = useCreate<FormArticleValues>({
     apiCreateFunction: async data => {
       return fetch(`/api/articles`, {
         method: 'POST',
@@ -45,7 +45,7 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
     formState: { errors },
   } = useForm<FormArticleValues>({
     mode: 'onSubmit',
-    defaultValues: formValues || defaultValues,
+    defaultValues: formValues || defaultValues, // Ensure default values are being used
     resolver: async data => {
       try {
         const result = await getFormArticleSchema().parseAsync(data);
@@ -68,19 +68,22 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
     return <Spin size="large" />;
   }
 
+  const onSubmit = (_data: FormArticleValues) => {
+    handleSave();
+  };
+
   return (
     <div>
       <CreateHeader />
-      <Form method="POST" id={uid} onFinish={handleSubmit(handleSave)} className="rounded-xl bg-white p-4">
+      <Form method="POST" id={uid} onFinish={handleSubmit(onSubmit)} className="rounded-xl bg-white p-4">
         <div className="grid grid-cols-2 gap-4 border p-4">
           <div className="space-y-4">
             <Field label="Tiêu đề bài viết" error={errors.title?.message}>
               <Input
                 placeholder="Tiêu đề bài viết"
-                {...register('title')}
-                value={formValues?.title || ''}
+                value={formValues?.title}
                 onChange={e => {
-                  return handleChange('title', e.target.value);
+                  handleChange('title', e.target.value);
                 }}
               />
             </Field>
@@ -88,9 +91,9 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
               <Select
                 className="w-full"
                 placeholder="Chọn trạng thái"
-                value={formValues?.status || undefined}
+                value={formValues?.status}
                 onChange={value => {
-                  return handleChange('status', value);
+                  handleChange('status', value);
                 }}
               >
                 <Select.Option value="published">Đã xuất bản</Select.Option>
@@ -106,7 +109,7 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
                 placeholder="Chọn danh mục"
                 value={formValues?.catalogue || undefined}
                 onChange={value => {
-                  return handleChange('catalogue', value);
+                  handleChange('catalogue', value);
                 }}
               >
                 <Select.Option value="tech">Công nghệ</Select.Option>
@@ -119,7 +122,7 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
                 {...register('url')}
                 value={formValues?.url || ''}
                 onChange={e => {
-                  return handleChange('url', e.target.value);
+                  handleChange('url', e.target.value);
                 }}
               />
             </Field>
@@ -132,24 +135,11 @@ export const FormArticle = forwardRef<FormArticleProps, FormArticleProps>(props 
                 {...register('content')}
                 value={formValues?.content || ''}
                 onChange={e => {
-                  return handleChange('content', e.target.value);
+                  handleChange('content', e.target.value);
                 }}
               />
             </Field>
           </div>
-        </div>
-        {/* Nút Submit */}
-        <div className="space-x-2 mt-4 flex justify-end">
-          <Button
-            onClick={() => {
-              return navigate(-1);
-            }}
-          >
-            Hủy
-          </Button>
-          <Button type="primary" htmlType="submit" loading={isSubmitting}>
-            Lưu bài viết
-          </Button>
         </div>
       </Form>
     </div>

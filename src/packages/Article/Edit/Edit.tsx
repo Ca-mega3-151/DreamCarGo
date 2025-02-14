@@ -1,67 +1,44 @@
-import { forwardRef, useEffect } from 'react';
+import { FormArticle } from '../FormMutation/FormMutation';
+import { Article } from '../models/article';
+
 import { useEdit } from '~/hooks/useEdit';
-import { FormArticle, FormArticleValues } from '~/packages/Article/FormMutation/FormMutation';
-import { articleModelToDefaultValuesOfFormMutation } from '~/packages/Article/utils/articleModelToDefaultValuesOfFormMutation';
 
-const fetchArticleAPI = async (id: string): Promise<FormArticleValues & { id: string }> => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
-        id, // 🛠 THÊM ID vào đây để khớp với kiểu dữ liệu của Article
-        title: 'Hướng dẫn sử dụng React',
-        status: 'published',
-        catalogue: 'tech',
-        url: 'https://example.com/react-guide',
-        content: 'Nội dung bài viết...',
-        createdAt: '2025-02-14',
-        employeeAt: 'Nguyễn Văn A',
+export const ArticleEdit = () => {
+  const { formValues, isLoading, isSubmitting, handleSave } = useEdit<Article>({
+    apiFetchFunction: async () => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve({
+            id: '123',
+            title: 'Bài viết mẫu',
+            status: 'draft',
+            catalogue: 'tech',
+            url: 'https://example.com',
+            content: 'Đây là nội dung bài viết mẫu',
+            createdAt: new Date().toISOString(),
+            employeeAt: 'John Doe',
+          });
+        }, 1000);
       });
-    }, 500);
-  });
-};
-
-const updateArticleAPI = async (id: string, data: Partial<FormArticleValues>) => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ id, ...data, updatedAt: new Date().toISOString() });
-    }, 1000);
-  });
-};
-
-interface ArticleEditProps {
-  id: string;
-}
-
-export const ArticleEdit = forwardRef<unknown, ArticleEditProps>(({ id }, ref) => {
-  const { formValues, isLoading, isSubmitting, handleSave } = useEdit({
-    apiFetchFunction: () => {
-      return fetchArticleAPI(id);
     },
-    updateFunction: updateArticleAPI,
+    updateFunction: async (id, data) => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log('Updated Data:', id, data);
+          resolve(true);
+        }, 500);
+      });
+    },
     getDefaultValues: data => {
-      return articleModelToDefaultValuesOfFormMutation({ article: data });
+      return data;
     },
   });
 
-  useEffect(() => {
-    if (formValues) {
-      console.log('Dữ liệu đã tải:', formValues);
-    }
-  }, [formValues]);
-
-  if (isLoading) {
-    return <p>Đang tải dữ liệu...</p>;
+  if (!formValues || isLoading) {
+    return <div className="py-10 text-center">Đang tải dữ liệu...</div>;
   }
 
   return (
-    <FormArticle
-      uid="edit-article"
-      isSubmitting={isSubmitting}
-      defaultValues={formValues}
-      onSubmit={handleSave}
-      ref={ref as any}
-    />
+    <FormArticle uid="article-edit-form" isSubmitting={isSubmitting} defaultValues={formValues} onSubmit={handleSave} />
   );
-});
-
-ArticleEdit.displayName = 'ArticleEdit';
+};
